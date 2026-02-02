@@ -20,7 +20,7 @@ Je souhaite commander :
 
 Merci 🙏`;
 
-  let phone = "225XXXXXXXX"; // MET TON NUMÉRO
+  let phone = "237658715038"; // MET TON NUMÉRO
   let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
   window.open(url, "_blank");
 }
@@ -39,4 +39,5 @@ setInterval(() => {
 
   setTimeout(() => heart.remove(), 6000);
 }, 600);
+
 
