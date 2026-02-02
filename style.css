@@ -49,12 +49,34 @@ body {
   border-radius: 12px;
 }
 
+/* Prix avec promo */
 .price {
   font-size: 26px;
-  color: '#E91E63', '#FF1744'
   font-weight: bold;
+  margin: 10px 0;
 }
 
+.price del {
+  color: #999;
+  margin-right: 10px;
+}
+
+.price span.promo {
+  color: #E91E63; /* rose vif */
+  background: #ffe6eb; /* fond rosé derrière le prix promo */
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* Section “Le Cadeau Parfait” avec fond rosé */
+.cadeau-parfait {
+  background: #ffe6eb; /* rose clair */
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 12px;
+}
+
+/* Liste des caractéristiques du produit */
 .features {
   list-style: none;
   padding: 0;
@@ -90,12 +112,25 @@ body {
   text-align: center;
 }
 
-blockquote {
+blockquote, .review {
   background: #f2f2f2;
   padding: 15px;
   margin: 15px auto;
   max-width: 500px;
   border-radius: 8px;
+  text-align: left;
+}
+
+/* ⭐ Étoiles avis dorées */
+.star {
+  color: gold;
+  font-size: 20px;
+  margin-right: 2px;
+}
+
+.review .name {
+  font-weight: bold;
+  margin-top: 5px;
 }
 
 footer {
@@ -117,6 +152,3 @@ footer {
   0% { transform: translateY(0); opacity: 1; }
   100% { transform: translateY(-100vh); opacity: 0; }
 }
-
-
-
