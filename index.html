@@ -51,6 +51,53 @@ for(let i=0;i<20;i++){
     </nav>
   </div>
 </header>
+ <!-- PRODUIT -->
+<section id="produit" class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+
+  <!-- VISUEL SANS IMAGE -->
+  <div class="h-80 rounded-3xl bg-gradient-to-br from-rose-200 to-rose-400 flex items-center justify-center text-7xl shadow-2xl">
+    🌹
+  </div>
+
+  <!-- DÉTAILS PRODUIT -->
+  <div>
+    <span class="text-sm font-bold text-rose-600">✨ Édition Limitée</span>
+    <h3 class="text-3xl font-black mt-3">Coffret "Best Wishes"</h3>
+    <p class="mt-6 leading-relaxed">
+      Un coffret élégant contenant une rose éternelle rouge et un collier en argent
+      avec pendentif cœur serti d’une pierre verte.
+    </p>
+
+    <ul class="mt-6 space-y-2">
+      <li>🌹 Rose éternelle premium</li>
+      <li>💎 Collier en argent</li>
+      <li>🎁 Coffret luxe</li>
+      <li>✉️ Carte de vœux</li>
+    </ul>
+
+    <!-- Étoiles et avis -->
+    <div class="mt-6 text-yellow-500 text-xl font-bold">
+      ★ ★ ★ ★ ★ <span class="text-gray-700 text-base">(4.9/5 - 127 avis)</span>
+    </div>
+
+    <!-- Prix barré et prix promo -->
+    <div class="mt-2 text-2xl font-black space-x-4">
+      <span class="line-through text-gray-400">15,999 FCFA</span>
+      <span class="text-rose-600">10,000 FCFA</span>
+    </div>
+
+    <!-- Quantité -->
+    <div class="flex items-center justify-center gap-4 mt-4">
+      <button onclick="changeQty(-1)" class="px-3 py-1 bg-gray-200 rounded">-</button>
+      <span id="qty" class="text-xl font-bold">1</span>
+      <button onclick="changeQty(1)" class="px-3 py-1 bg-gray-200 rounded">+</button>
+    </div>
+
+    <!-- Commander via WhatsApp -->
+    <button 
+      onclick="orderWhatsApp()" 
+      cla
+
 
 <!-- HERO -->
 <section class="text-center py-24">
@@ -65,36 +112,6 @@ for(let i=0;i<20;i++){
   </a>
 </section>
 
-<!-- PRODUIT -->
-<section id="produit" class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
-  
-  <!-- VISUEL SANS IMAGE -->
-  <div class="h-80 rounded-3xl bg-gradient-to-br from-rose-200 to-rose-400 flex items-center justify-center text-7xl shadow-2xl">
-    🌹
-  </div>
-
-  <div>
-    <span class="text-sm font-bold text-rose-600">✨ Édition Limitée</span>
-    <h3 class="text-3xl font-black mt-3">Coffret "Best Wishes"</h3>
-    <p class="text-2xl font-bold text-rose-600 mt-4">10 000 FCFA</p>
-
-    <p class="mt-6 leading-relaxed">
-      Un coffret élégant contenant une rose éternelle rouge et un collier en argent
-      avec pendentif cœur serti d’une pierre verte.
-    </p>
-
-    <ul class="mt-6 space-y-2">
-      <li>🌹 Rose éternelle premium</li>
-      <li>💎 Collier en argent</li>
-      <li>🎁 Coffret luxe</li>
-      <li>✉️ Carte de vœux</li>
-    </ul>
-
-    <a href="#commander" class="inline-block mt-8 px-8 py-4 bg-rose-600 text-white rounded-xl shadow hover:scale-105 transition">
-      Ajouter au panier
-    </a>
-  </div>
-</section>
 
 <!-- AVIS -->
 <section class="bg-white py-20">
@@ -141,4 +158,5 @@ for(let i=0;i<20;i++){
 
 </body>
 </html>
+
 
