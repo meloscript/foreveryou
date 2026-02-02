@@ -61,10 +61,20 @@ for(let i=0;i<20;i++){
 <!-- PRODUIT -->
 <section id="produit" class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
   
-  <!-- VISUEL SANS IMAGE -->
-  <div class="h-80 rounded-3xl bg-gradient-to-br from-rose-200 to-rose-400 flex items-center justify-center text-7xl shadow-2xl">
-    🌹
+ <!-- VISUEL PRODUIT AVEC MINIATURES -->
+<div class="h-80 rounded-3xl bg-gradient-to-br from-rose-200 to-rose-400 flex flex-col items-center justify-center shadow-2xl overflow-hidden">
+  <!-- Image principale -->
+  <img id="mainImage" src="image1.jpeg" alt="Produit 1" class="h-full object-cover rounded-3xl mb-4">
+
+  <!-- Miniatures -->
+  <div class="flex gap-2">
+    <img src="image1.jpeg" alt="Miniature 1" class="h-16 w-16 object-cover rounded-lg cursor-pointer border-2 border-rose-500" onclick="changeImage('image1.jpeg')">
+    <img src="image2.jpeg" alt="Miniature 2" class="h-16 w-16 object-cover rounded-lg cursor-pointer border-2 border-gray-200" onclick="changeImage('image2.jpeg')">
+    <img src="image3.jpeg" alt="Miniature 3" class="h-16 w-16 object-cover rounded-lg cursor-pointer border-2 border-gray-200" onclick="changeImage('image3.jpeg')">
+    <img src="image4.jpeg" alt="Miniature 4" class="h-16 w-16 object-cover rounded-lg cursor-pointer border-2 border-gray-200" onclick="changeImage('image4.jpeg')">
+    <img src="image5.jpeg" alt="Miniature 5" class="h-16 w-16 object-cover rounded-lg cursor-pointer border-2 border-gray-200" onclick="changeImage('image5.jpeg')">
   </div>
+</div>
 
   <div>
     <span class="text-sm font-bold text-rose-600">✨ Édition Limitée</span>
@@ -216,9 +226,25 @@ Merci 🙏`;
   window.open(url, "_blank");
 }
 </script>
+<script>
+function changeImage(src) {
+  document.getElementById('mainImage').src = src;
+
+  // changer la bordure des miniatures
+  const thumbnails = document.querySelectorAll('#produit .flex > img');
+  thumbnails.forEach(img => {
+    img.classList.remove('border-rose-500');
+    img.classList.add('border-gray-200');
+  });
+  const activeThumb = Array.from(thumbnails).find(img => img.src.includes(src));
+  if (activeThumb) activeThumb.classList.add('border-rose-500');
+  if (activeThumb) activeThumb.classList.remove('border-gray-200');
+}
+</script>
 
 </body>
 </html>
+
 
 
 
