@@ -106,6 +106,29 @@ for(let i=0;i<20;i++){
       <li>🎁 Coffret luxe</li>
       <li>✉️ Carte de vœux</li>
     </ul>
+    <!-- Badge "Plus que 3 disponibles !" -->
+<div class="availability-badge">
+  🔥 Plus que 3 disponibles !
+</div>
+
+<style>
+.availability-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #ff1744; /* rouge vif */
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  animation: blink 1s infinite; /* clignotement rapide */
+  text-align: center;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+</style>
+
 
     <!-- Quantité -->
     <div class="flex items-center justify-center gap-4 mt-4">
@@ -301,6 +324,7 @@ function changeImage(src) {
 
 </body>
 </html>
+
 
 
 
