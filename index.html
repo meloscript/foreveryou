@@ -1,101 +1,141 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Forever You ♥ Le Cadeau Parfait</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forever You ♥</title>
 
-<header class="navbar">
-  <h2>Forever You ♥</h2>
-  <nav>
-    <a href="#accueil">Accueil</a>
-    <a href="#produit">Le Produit</a>
-    <a href="#details">Détails</a>
-    <a href="#commander">Commander</a>
-  </nav>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+/* Cœurs animés */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 20px;
+  animation: float 10s linear infinite;
+  opacity: 0.6;
+}
+@keyframes float {
+  0% { transform: translateY(0) scale(1); opacity: 0; }
+  10% { opacity: .6; }
+  100% { transform: translateY(-110vh) scale(1.5); opacity: 0; }
+}
+</style>
+</head>
+
+<body class="bg-gradient-to-br from-rose-50 to-pink-100 text-gray-800">
+
+<!-- Cœurs -->
+<script>
+for(let i=0;i<20;i++){
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="♥";
+  h.style.left=Math.random()*100+"vw";
+  h.style.animationDelay=Math.random()*10+"s";
+  document.body.appendChild(h);
+}
+</script>
+
+<!-- HEADER -->
+<header class="sticky top-0 bg-white/80 backdrop-blur shadow z-50">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-black text-rose-600">Forever You ♥</h1>
+    <nav class="space-x-6 font-medium">
+      <a href="#produit">Produit</a>
+      <a href="#details">Détails</a>
+      <a href="#commander" class="text-rose-600">Commander</a>
+    </nav>
+  </div>
 </header>
 
-<section class="hero" id="accueil">
-  <h1>Le Cadeau Parfait<br>Pour Votre Bien-Aimée</h1>
-  <p>
-    Un coffret exclusif qui unit la beauté éternelle d'une rose
-    et l'élégance d'un bijou précieux
+<!-- HERO -->
+<section class="text-center py-24">
+  <h2 class="text-4xl md:text-6xl font-black mb-6">
+    Le Cadeau Parfait<br>Pour Votre Bien-Aimée
+  </h2>
+  <p class="max-w-xl mx-auto text-lg opacity-90">
+    Une rose éternelle et un bijou précieux dans un coffret de luxe.
   </p>
-  <a href="#produit" class="btn">Découvrir le Coffret</a>
+  <a href="#commander" class="inline-block mt-10 px-10 py-4 bg-rose-600 text-white rounded-full shadow-lg hover:scale-105 transition">
+    Découvrir le Coffret
+  </a>
 </section>
 
-<section class="product" id="produit">
-  <h2>✨ Édition Limitée</h2>
-
-  <img src="images/coffret.jpg" class="product-img" alt="Coffret Romance Exclusive">
-
-  <h3>Coffret Romance Exclusive</h3>
-  <div class="rating">★★★★★ (4.9/5 – 127 avis)</div>
-
-  <p class="price"><span id="total">10 000</span> FCFA</p>
-
-  <p class="desc">
-    Un cadeau d'exception : rose éternelle + collier en argent
-    avec pendentif cœur et pierre verte.
-  </p>
-
-  <ul class="features">
-    <li>🌹 Rose Éternelle Premium</li>
-    <li>💎 Collier en Argent</li>
-    <li>🎁 Écrin Luxueux</li>
-    <li>✉️ Carte de Vœux</li>
-  </ul>
-
-  <div class="quantity">
-    <button onclick="changeQty(-1)">−</button>
-    <span id="qty">1</span>
-    <button onclick="changeQty(1)">+</button>
+<!-- PRODUIT -->
+<section id="produit" class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+  
+  <!-- VISUEL SANS IMAGE -->
+  <div class="h-80 rounded-3xl bg-gradient-to-br from-rose-200 to-rose-400 flex items-center justify-center text-7xl shadow-2xl">
+    🌹
   </div>
 
-  <button id="commander" class="btn buy" onclick="orderWhatsApp()">
-    Commander Maintenant
-  </button>
+  <div>
+    <span class="text-sm font-bold text-rose-600">✨ Édition Limitée</span>
+    <h3 class="text-3xl font-black mt-3">Coffret "Best Wishes"</h3>
+    <p class="text-2xl font-bold text-rose-600 mt-4">10 000 FCFA</p>
+
+    <p class="mt-6 leading-relaxed">
+      Un coffret élégant contenant une rose éternelle rouge et un collier en argent
+      avec pendentif cœur serti d’une pierre verte.
+    </p>
+
+    <ul class="mt-6 space-y-2">
+      <li>🌹 Rose éternelle premium</li>
+      <li>💎 Collier en argent</li>
+      <li>🎁 Coffret luxe</li>
+      <li>✉️ Carte de vœux</li>
+    </ul>
+
+    <a href="#commander" class="inline-block mt-8 px-8 py-4 bg-rose-600 text-white rounded-xl shadow hover:scale-105 transition">
+      Ajouter au panier
+    </a>
+  </div>
 </section>
 
-<section class="benefits" id="details">
-  <div>🚚<br>Livraison Rapide</div>
-  <div>✅<br>Qualité Garantie</div>
-  <div>💝<br>Emballage Premium</div>
-  <div>📞<br>Support 24/7</div>
+<!-- AVIS -->
+<section class="bg-white py-20">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+    <h3 class="text-3xl font-black mb-12">Ils Ont Adoré ♥</h3>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-6 shadow rounded-xl">
+        ★★★★★
+        <p class="mt-3 italic">"Ma copine a pleuré de joie."</p>
+        <p class="mt-2 font-bold">— Maxime D.</p>
+      </div>
+      <div class="p-6 shadow rounded-xl">
+        ★★★★★
+        <p class="mt-3 italic">"Le cadeau parfait."</p>
+        <p class="mt-2 font-bold">— Sarah M.</p>
+      </div>
+      <div class="p-6 shadow rounded-xl">
+        ★★★★★
+        <p class="mt-3 italic">"Qualité incroyable."</p>
+        <p class="mt-2 font-bold">— Jean-Paul K.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="reviews">
-  <h2>Ils Ont Adoré ♥</h2>
+<!-- COMMANDER -->
+<section id="commander" class="text-center py-24">
+  <h3 class="text-4xl font-black mb-6">Offrez un Moment Magique ✨</h3>
+  <p class="mb-10">Commande simple via WhatsApp — aucun paiement en ligne</p>
 
-  <blockquote>
-    ★★★★★<br>
-    "Ma copine a pleuré de joie en ouvrant ce coffret !"
-    <span>– Maxime D.</span>
-  </blockquote>
-
-  <blockquote>
-    ★★★★★<br>
-    "Le coffret le plus romantique que j'ai jamais reçu."
-    <span>– Sarah M.</span>
-  </blockquote>
-
-  <blockquote>
-    ★★★★★<br>
-    "Rapport qualité-prix imbattable. Je recommande !"
-    <span>– Jean-Paul K.</span>
-  </blockquote>
+  <a 
+    href="https://wa.me/XXXXXXXXX?text=Bonjour%20👋%0AJe%20souhaite%20passer%20commande%20du%20coffret%20Best%20Wishes%20à%2010%20000%20FCFA.%0AMerci."
+    target="_blank"
+    class="inline-block px-12 py-5 bg-green-500 text-white text-xl rounded-full shadow-lg hover:scale-105 transition">
+    Commander sur WhatsApp
+  </a>
 </section>
 
-<footer>
-  <p>Forever You – Des cadeaux qui marquent les cœurs pour toujours</p>
-  <p>© 2026 Forever You. Fait avec ♥</p>
+<!-- FOOTER -->
+<footer class="text-center py-8 opacity-70">
+  © 2026 Forever You — Fait avec ♥
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
-
-
