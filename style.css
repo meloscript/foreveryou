@@ -1,77 +1,47 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
 body {
-  height: 100vh;
-  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f0f0f;
+  color: white;
   overflow: hidden;
 }
 
-/* Conteneur principal */
-.container {
-  position: relative;
-  z-index: 2;
-  background: white;
-  width: 320px;
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.card {
+  max-width: 350px;
+  margin: 120px auto;
+  background: rgba(255, 20, 147, 0.15);
   padding: 25px;
   border-radius: 15px;
   text-align: center;
-  margin: auto;
-  top: 50%;
-  transform: translateY(-50%);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-h1 {
-  color: #ff4d6d;
+  backdrop-filter: blur(8px);
 }
 
 input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
+  width: 60px;
+  padding: 5px;
+  text-align: center;
 }
 
 button {
-  background: #25d366;
-  border: none;
-  color: white;
-  padding: 15px;
+  margin-top: 20px;
+  padding: 12px;
   width: 100%;
-  border-radius: 10px;
+  border: none;
+  border-radius: 25px;
+  background: hotpink;
+  color: white;
   font-size: 16px;
   cursor: pointer;
 }
 
 button:hover {
-  opacity: 0.9;
+  background: deeppink;
 }
 
-.price {
-  font-size: 18px;
-  margin: 10px 0;
-}
-
-/* ❤️ Animation des cœurs */
-.hearts::before {
-  content: "❤️ 💕 💖 💘 💗 💓";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  font-size: 30px;
-  animation: float 10s linear infinite;
-  opacity: 0.3;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
-}
