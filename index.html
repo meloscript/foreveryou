@@ -15,157 +15,130 @@
   font-size: 20px;
   animation: float 10s linear infinite;
   opacity: 0.6;
-  pointer-events: none;
 }
 @keyframes float {
   0% { transform: translateY(0) scale(1); opacity: 0; }
-  10% { opacity: 0.6; }
+  10% { opacity: .6; }
   100% { transform: translateY(-110vh) scale(1.5); opacity: 0; }
-}
-
-/* Cadre prix */
-.price-box {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #ffe4e6;
-  border-radius: 12px;
-  margin-top: 10px;
-  text-align: center;
-}
-
-.price-box .old-price {
-  text-decoration: line-through;
-  color: #9ca3af;
-  font-weight: bold;
-  margin-right: 10px;
-}
-
-.price-box .promo-price {
-  color: #ef4444;
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-
-/* Étoiles dorées */
-.star {
-  color: gold;
-  font-size: 1.2rem;
-}
-
-/* Boutons */
-.btn-whatsapp {
-  background-color: #25D366;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
 }
 </style>
 </head>
 
 <body class="bg-gradient-to-br from-rose-50 to-pink-100 text-gray-800">
 
-<!-- Animation de cœurs -->
+<!-- Cœurs -->
 <script>
-const colors = ["#FF1744", "#FF80AB"]; // rouge et rose
-setInterval(() => {
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerText = "❤";
-  heart.style.color = colors[Math.floor(Math.random() * colors.length)];
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = (12 + Math.random() * 20) + "px";
-  document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 10000);
-}, 500);
-</script>
-
-<!-- Section produit -->
-<div class="max-w-xl mx-auto text-center mt-10 p-4 bg-white rounded-xl shadow-lg">
-  <h1 class="text-3xl font-bold mb-2">Coffret Romance Exclusive</h1>
-  <p class="text-pink-600 mb-4">Une rose éternelle et un bijou précieux dans un coffret de luxe.</p>
-
-  <!-- Image produit -->
-  <img src="https://via.placeholder.com/320x320.png?text=Produit" alt="Coffret Romance Exclusive" class="mx-auto rounded-xl mb-4">
-
-  <!-- Étoiles -->
-  <div class="mb-4">
-    <span class="star">★</span>
-    <span class="star">★</span>
-    <span class="star">★</span>
-    <span class="star">★</span>
-    <span class="star">★</span>
-    <span>(4.9/5 - 127 avis)</span>
-  </div>
-
-  <!-- Cadre prix -->
-  <div class="price-box">
-    <span class="old-price">15,999 FCFA</span>
-    <span class="promo-price" id="total">10,000 FCFA</span>
-  </div>
-
-  <!-- Quantité -->
-  <div class="flex justify-center items-center gap-3 mt-4">
-    <button onclick="changeQty(-1)" class="px-3 py-1 bg-pink-200 rounded">-</button>
-    <span id="qty" class="font-bold">1</span>
-    <button onclick="changeQty(1)" class="px-3 py-1 bg-pink-200 rounded">+</button>
-  </div>
-
-  <!-- Bouton WhatsApp -->
-  <button class="btn-whatsapp mt-4" onclick="orderWhatsApp()">Commander via WhatsApp</button>
-</div>
-
-<!-- Avis -->
-<div class="max-w-xl mx-auto mt-8 p-4 bg-white rounded-xl shadow-lg">
-  <h2 class="text-2xl font-bold mb-4">Ils ont adoré ♥</h2>
-  <blockquote class="mb-2 p-2 bg-rose-50 rounded">
-    <strong>Maxime D.:</strong> Ma copine a pleuré de joie en ouvrant ce coffret ! La rose est magnifique et le collier est superbe.
-  </blockquote>
-  <blockquote class="mb-2 p-2 bg-rose-50 rounded">
-    <strong>Sarah M.:</strong> Le coffret le plus romantique que j'ai jamais reçu ! La qualité est exceptionnelle.
-  </blockquote>
-  <blockquote class="mb-2 p-2 bg-rose-50 rounded">
-    <strong>Jean-Paul K.:</strong> Rapport qualité-prix imbattable ! L'emballage est luxueux et fait vraiment son effet.
-  </blockquote>
-</div>
-
-<script>
-// 💰 Prix et quantité
-let price = 10000;
-let qty = 1;
-
-function changeQty(value) {
-  qty += value;
-  if (qty < 1) qty = 1;
-  document.getElementById("qty").innerText = qty;
-  document.getElementById("total").innerText = (price * qty) + " FCFA";
-}
-
-// 📲 Commander via WhatsApp
-function orderWhatsApp() {
-  let total = price * qty;
-  let message = `🛍️ Bonjour 👋
-Je souhaite passer commande sur Forever You :
-
-🎁 Produit : Coffret Romance Exclusive
-💎 Prix unitaire : ${price} FCFA
-📦 Quantité : ${qty}
-💰 Prix total : ${total} FCFA
-
-Merci de confirmer ma commande 🙏`;
-
-  let phone = "237658715038"; // ton numéro WhatsApp
-  let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-  window.open(url, "_blank");
+for(let i=0;i<20;i++){
+  const h = document.createElement("div");
+  h.className = "heart";
+  h.innerHTML = "♥";
+  h.style.left = Math.random() * 100 + "vw";
+  h.style.animationDelay = Math.random() * 10 + "s";
+  h.style.color = "#FF80AB"; // 🌸 couleur rose
+  document.body.appendChild(h);
 }
 </script>
+
+
+<!-- HEADER -->
+<header class="sticky top-0 bg-white/80 backdrop-blur shadow z-50">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-black text-rose-600">Forever You ♥</h1>
+    <nav class="space-x-6 font-medium">
+      <a href="#produit">Produit</a>
+      <a href="#details">Détails</a>
+      <a href="#commander" class="text-rose-600">Commander</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="text-center py-24">
+  <h2 class="text-4xl md:text-6xl font-black mb-6">
+    Le Cadeau Parfait<br>Pour Votre Bien-Aimée
+  </h2>
+  <p class="max-w-xl mx-auto text-lg opacity-90">
+    Une rose éternelle et un bijou précieux dans un coffret de luxe.
+  </p>
+  <a href="#commander" class="inline-block mt-10 px-10 py-4 bg-rose-600 text-white rounded-full shadow-lg hover:scale-105 transition">
+    Découvrir le Coffret
+  </a>
+</section>
+
+<!-- PRODUIT -->
+<section id="produit" class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+  
+  <!-- VISUEL SANS IMAGE -->
+  <div class="h-80 rounded-3xl bg-gradient-to-br from-rose-200 to-rose-400 flex items-center justify-center text-7xl shadow-2xl">
+    🌹
+  </div>
+
+  <div>
+    <span class="text-sm font-bold text-rose-600">✨ Édition Limitée</span>
+    <h3 class="text-3xl font-black mt-3">Coffret "Best Wishes"</h3>
+    <p class="text-2xl font-bold text-rose-600 mt-4">10 000 FCFA</p>
+
+    <p class="mt-6 leading-relaxed">
+      Un coffret élégant contenant une rose éternelle rouge et un collier en argent
+      avec pendentif cœur serti d’une pierre verte.
+    </p>
+
+    <ul class="mt-6 space-y-2">
+      <li>🌹 Rose éternelle premium</li>
+      <li>💎 Collier en argent</li>
+      <li>🎁 Coffret luxe</li>
+      <li>✉️ Carte de vœux</li>
+    </ul>
+
+    <a href="#commander" class="inline-block mt-8 px-8 py-4 bg-rose-600 text-white rounded-xl shadow hover:scale-105 transition">
+      Ajouter au panier
+    </a>
+  </div>
+</section>
+
+<!-- AVIS -->
+<section class="bg-white py-20">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+    <h3 class="text-3xl font-black mb-12">Ils Ont Adoré ♥</h3>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-6 shadow rounded-xl">
+        ★★★★★
+        <p class="mt-3 italic">"Ma copine a pleuré de joie."</p>
+        <p class="mt-2 font-bold">— Maxime D.</p>
+      </div>
+      <div class="p-6 shadow rounded-xl">
+        ★★★★★
+        <p class="mt-3 italic">"Le cadeau parfait."</p>
+        <p class="mt-2 font-bold">— Sarah M.</p>
+      </div>
+      <div class="p-6 shadow rounded-xl">
+        ★★★★★
+        <p class="mt-3 italic">"Qualité incroyable."</p>
+        <p class="mt-2 font-bold">— Jean-Paul K.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMANDER -->
+<section id="commander" class="text-center py-24">
+  <h3 class="text-4xl font-black mb-6">Offrez un Moment Magique ✨</h3>
+  <p class="mb-10">Commande simple via WhatsApp — aucun paiement en ligne</p>
+
+  <a 
+    href="https://wa.me/XXXXXXXXX?text=Bonjour%20👋%0AJe%20souhaite%20passer%20commande%20du%20coffret%20Best%20Wishes%20à%2010%20000%20FCFA.%0AMerci."
+    target="_blank"
+    class="inline-block px-12 py-5 bg-green-500 text-white text-xl rounded-full shadow-lg hover:scale-105 transition">
+    Commander sur WhatsApp
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer class="text-center py-8 opacity-70">
+  © 2026 Forever You — Fait avec ♥
+</footer>
 
 </body>
 </html>
-
-
-
-
-
 
