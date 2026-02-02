@@ -159,9 +159,36 @@ for(let i=0;i<20;i++){
 <footer class="text-center py-8 opacity-70">
   © 2026 Forever You — Fait avec ♥
 </footer>
+<script>
+let price = 10000; // prix promo
+let qty = 1;
+
+function changeQty(value) {
+  qty += value;
+  if (qty < 1) qty = 1;
+  document.getElementById("qty").innerText = qty;
+}
+
+function orderWhatsApp() {
+  let total = price * qty;
+  let message = `Bonjour 👋
+Je souhaite commander :
+
+🎁 Coffret Romance Exclusive
+📦 Quantité : ${qty}
+💰 Total : ${total} FCFA
+
+Merci 🙏`;
+
+  let phone = "237658715038"; // ton numéro WhatsApp
+  let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank");
+}
+</script>
 
 </body>
 </html>
+
 
 
 
