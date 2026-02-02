@@ -21,6 +21,13 @@
   10% { opacity: .6; }
   100% { transform: translateY(-110vh) scale(1.5); opacity: 0; }
 }
+  @keyframes pulse-button {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+.button-pulse {
+  animation: pulse-button 1.5s infinite;
+}
 </style>
 </head>
 
@@ -148,10 +155,13 @@ for(let i=0;i<20;i++){
   <p class="mb-10">Commande simple via WhatsApp — aucun paiement en ligne</p>
 
   <a 
-    href="https://wa.me/XXXXXXXXX?text=Bonjour%20👋%0AJe%20souhaite%20passer%20commande%20du%20coffret%20Best%20Wishes%20à%2010%20000%20FCFA.%0AMerci."
-    target="_blank"
-    class="inline-block px-12 py-5 bg-green-500 text-white text-xl rounded-full shadow-lg hover:scale-105 transition">
-    Commander sur WhatsApp
+   <a 
+  href="https://wa.me/XXXXXXXXX?text=Bonjour%20👋%0AJe%20souhaite%20passer%20commande%20du%20coffret%20Best%20Wishes%20à%2010%20000%20FCFA.%0AMerci."
+  target="_blank"
+  class="button-pulse inline-block px-12 py-5 bg-green-500 text-white text-xl rounded-full shadow-lg hover:scale-105 transition-transform">
+  Commander sur WhatsApp
+</a>
+
   </a>
 </section>
 <!-- AVANT FOOTER : DÉTAILS DU COFFRET -->
@@ -209,6 +219,7 @@ Merci 🙏`;
 
 </body>
 </html>
+
 
 
 
