@@ -25,12 +25,18 @@ Merci 🙏`;
   window.open(url, "_blank");
 }
 
-/* ❤️ Animation de cœurs */
+/* ❤️ Animation de cœurs rouge et rose */
+const colors = ["#FF1744", "#FF80AB"]; // rouge et rose
+
 setInterval(() => {
   const heart = document.createElement("div");
   heart.className = "heart";
-  heart.innerHTML = "❤️";
+  heart.innerText = "❤"; // coeur simple Unicode
+  heart.style.color = colors[Math.floor(Math.random() * colors.length)];
   heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (12 + Math.random() * 20) + "px"; // taille aléatoire
   document.body.appendChild(heart);
+
   setTimeout(() => heart.remove(), 6000);
 }, 600);
+
