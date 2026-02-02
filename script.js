@@ -1,51 +1,36 @@
-const price = 10000;
-const qtyInput = document.getElementById("qty");
-const totalSpan = document.getElementById("total");
+let price = 10000;
+let qty = 1;
 
-qtyInput.addEventListener("input", () => {
-  totalSpan.textContent = price * qtyInput.value;
-});
-
-function order() {
-  const qty = qtyInput.value;
-  const total = price * qty;
-  const msg = `Bonjour, je souhaite commander ${qty} coffret(s) Forever You 💝.\nTotal : ${total} FCFA`;
-  const phone = "22500000000"; // ton numéro WhatsApp
-  window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`);
+function changeQty(value) {
+  qty += value;
+  if (qty < 1) qty = 1;
+  document.getElementById("qty").innerText = qty;
+  document.getElementById("total").innerText = price * qty;
 }
 
-/* ❤️ animation des cœurs */
-const canvas = document.getElementById("hearts");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function orderWhatsApp() {
+  let total = price * qty;
 
-let hearts = [];
+  let message = `Bonjour 👋
+Je souhaite commander :
 
-function createHeart() {
-  hearts.push({
-    x: Math.random() * canvas.width,
-    y: canvas.height + 20,
-    size: Math.random() * 10 + 5,
-    speed: Math.random() * 1 + 0.5
-  });
+🎁 Coffret Romance Exclusive
+📦 Quantité : ${qty}
+💰 Total : ${total} FCFA
+
+Merci 🙏`;
+
+  let phone = "225XXXXXXXX"; // MET TON NUMÉRO
+  let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank");
 }
 
-function draw() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  hearts.forEach((h, i) => {
-    ctx.fillStyle = "pink";
-    ctx.beginPath();
-    ctx.arc(h.x, h.y, h.size, 0, Math.PI * 2);
-    ctx.fill();
-    h.y -= h.speed;
-    if (h.y < -20) hearts.splice(i, 1);
-  });
-}
-
-setInterval(createHeart, 300);
-function animate() {
-  draw();
-  requestAnimationFrame(animate);
-}
-animate();
+/* ❤️ Animation de cœurs */
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}, 600);
