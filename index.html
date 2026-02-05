@@ -97,12 +97,20 @@ for(let i=0;i<20;i++){
 
     <!-- Prix barré et prix promo -->
   <!-- Prix barré et prix promo avec encadré -->
-<div class="mt-2 flex items-center gap-4 text-2xl font-black">
-  <span class="line-through text-gray-400">15,999 FCFA</span>
-  <span class="text-rose-600 px-4 py-2 border-2 border-rose-600 rounded-lg">
+<div class="mt-4 flex items-center gap-4 text-2xl font-black">
+  <span class="line-through text-gray-400 text-lg md:text-2xl">
+    15,999 FCFA
+  </span>
+
+  <span class="text-green-600 bg-green-100 px-4 py-2 border-2 border-green-600 rounded-lg shadow-md text-lg md:text-2xl">
     10,000 FCFA
   </span>
+
+  <span class="bg-red-500 text-white text-sm px-2 py-1 rounded-full font-semibold">
+    -35%
+  </span>
 </div>
+
 
 
     <p class="mt-4 leading-relaxed">
@@ -334,6 +342,7 @@ function changeImage(src) {
 
 </body>
 </html>
+
 
 
 
