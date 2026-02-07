@@ -67,36 +67,47 @@ for(let i=0;i<20;i++){
 
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-  <!-- Image principale -->
- <img
-  id="mainImage"
-  src="image1.jpeg"
-  alt="Produit 1"
-  class="w-full h-[380px] sm:h-[450px] md:h-[550px] object-cover rounded-3xl mb-4 shadow-xl"
-/>
 
-<!-- Miniatures -->
-<div class="flex gap-3 overflow-x-auto">
-  <img src="image1.jpeg" alt="Miniature 1"
-    class="h-20 w-20 object-cover rounded-xl cursor-pointer border-2 border-rose-500 flex-shrink-0"
-    onclick="changeImage('image1.jpeg')">
+  <!-- ✅ COLONNE GAUCHE : IMAGES -->
+  <div>
+    <!-- Image principale -->
+    <img
+      id="mainImage"
+      src="image1.jpeg"
+      alt="Produit 1"
+      class="w-full h-[380px] sm:h-[450px] md:h-[550px] object-cover rounded-3xl mb-4 shadow-xl"
+    />
 
-  <img src="image2.jpeg" alt="Miniature 2"
-    class="h-20 w-20 object-cover rounded-xl cursor-pointer border-2 border-gray-200 flex-shrink-0"
-    onclick="changeImage('image2.jpeg')">
+    <!-- Miniatures -->
+    <div class="flex gap-3 overflow-x-auto">
+      <img src="image1.jpeg" alt="Miniature 1"
+        class="h-20 w-20 object-cover rounded-xl cursor-pointer border-2 border-rose-500 flex-shrink-0"
+        onclick="changeImage('image1.jpeg')">
 
-  <img src="image3.jpeg" alt="Miniature 3"
-    class="h-20 w-20 object-cover rounded-xl cursor-pointer border-2 border-gray-200 flex-shrink-0"
-    onclick="changeImage('image3.jpeg')">
+      <img src="image2.jpeg" alt="Miniature 2"
+        class="h-20 w-20 object-cover rounded-xl cursor-pointer border-2 border-gray-200 flex-shrink-0"
+        onclick="changeImage('image2.jpeg')">
 
-  <img src="image4.jpeg" alt="Miniature 4"
-    class="h-20 w-20 object-cover rounded-xl cursor-pointer border-2 border-gray-200 flex-shrink-0"
-    onclick="changeImage('image4.jpeg')">
+      <img src="image3.jpeg" alt="Miniature 3"
+        class="h-20 w-20 object-cover rounded-xl cursor-pointer border-2 border-gray-200 flex-shrink-0"
+        onclick="changeImage('image3.jpeg')">
 
-  <img src="image5.jpeg" alt="Miniature 5"
-    class="h-20 w-20 object-cover rounded-xl cursor-pointer border-2 border-gray-200 flex-shrink-0"
-    onclick="changeImage('image5.jpeg')">
+      <img src="image4.jpeg" alt="Miniature 4"
+        class="h-20 w-20 object-cover rounded-xl cursor-pointer border-2 border-gray-200 flex-shrink-0"
+        onclick="changeImage('image4.jpeg')">
+
+      <img src="image5.jpeg" alt="Miniature 5"
+        class="h-20 w-20 object-cover rounded-xl cursor-pointer border-2 border-gray-200 flex-shrink-0"
+        onclick="changeImage('image5.jpeg')">
+    </div>
+  </div>
+
+  <!-- 👉 LA COLONNE DROITE (texte / prix) viendra ici -->
+  <!-- <div> ... </div> -->
+
 </div>
+
+  
 
 
 
@@ -447,6 +458,7 @@ animate();
 </script>
 
 </body>
+
 
 
 
