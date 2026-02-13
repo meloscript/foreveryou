@@ -117,7 +117,7 @@ for(let i=0;i<20;i++){
     <!-- Prix barré et prix promo -->
   <!-- Prix barré et prix promo avec encadré -->
 <div class="relative mt-4 inline-flex items-center gap-4 px-6 py-4 border-2 border-green-600 rounded-xl bg-green-50 shadow-md">
-  <span class="absolute -top-3 -right-3 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-semibold">-35%</span>
+  <span class="absolute -top-3 -right-3 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-semibold">-49%</span>
   
   <span class="line-through text-gray-400 text-lg md:text-xl">
     19,999 <span class="text-sm">FCFA</span>
@@ -174,28 +174,16 @@ for(let i=0;i<20;i++){
     </div>
 
     <!-- Commander via WhatsApp -->
-
-    <style>
-@keyframes blinkPulse {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.7;
-    transform: scale(1.05);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+<style>
+@keyframes blinkStrong {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
-.blink-button {
-  animation: blinkPulse 1.2s infinite;
+.blink-strong {
+  animation: blinkStrong 0.8s infinite;
 }
 </style>
-
   <button 
   onclick="orderWhatsApp()" 
   class="mt-6 w-full px-8 py-5 bg-red-600 text-white text-xl font-bold rounded-3xl shadow-lg hover:scale-105 transition-transform">
@@ -462,6 +450,7 @@ animate();
 </script>
 
 </body>
+
 
 
 
