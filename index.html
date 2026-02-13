@@ -120,7 +120,7 @@ for(let i=0;i<20;i++){
   <span class="absolute -top-3 -right-3 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-semibold">-35%</span>
   
   <span class="line-through text-gray-400 text-lg md:text-xl">
-    15,999 <span class="text-sm">FCFA</span>
+    19,999 <span class="text-sm">FCFA</span>
   </span>
 
   <span class="flex items-baseline font-extrabold text-green-700 text-3xl md:text-4xl">
@@ -174,6 +174,28 @@ for(let i=0;i<20;i++){
     </div>
 
     <!-- Commander via WhatsApp -->
+
+    <style>
+@keyframes blinkPulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.blink-button {
+  animation: blinkPulse 1.2s infinite;
+}
+</style>
+
   <button 
   onclick="orderWhatsApp()" 
   class="mt-6 w-full px-8 py-5 bg-red-600 text-white text-xl font-bold rounded-3xl shadow-lg hover:scale-105 transition-transform">
@@ -440,6 +462,7 @@ animate();
 </script>
 
 </body>
+
 
 
 
